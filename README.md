@@ -60,15 +60,3 @@ codenames/
 │   └── GameBoard.js       # Main game UI
 └── styles/globals.css     # Global styles + CSS variables
 ```
-
-## Deployment
-
-**Railway / Render / Fly.io** (recommended for WebSockets):
-```bash
-npm run build
-npm start
-```
-
-**Vercel**: Not recommended — Vercel doesn't support persistent WebSocket connections. Use Railway or Render instead.
-
-Set `PORT` environment variable if needed (defaults to 3000).
