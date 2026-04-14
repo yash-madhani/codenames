@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Oswald:wght@300;400;500;600;700&display=swap');
+
+/* ── DARK THEME (default) ── */
+:root {
+  --red: #c0392b;
+  --red-light: #e74c3c;
+  --red-dark: #7b241c;
+  --red-glow: rgba(192, 57, 43, 0.4);
+  --red-card-bg: #5c1a14;
+  --red-card-border: #e74c3c;
+  --red-card-text: #ffd5d0;
+
+  --blue: #1a5276;
+  --blue-light: #2980b9;
+  --blue-dark: #0e2f44;
+  --blue-glow: rgba(26, 82, 118, 0.4);
+  --blue-card-bg: #0e3460;
+  --blue-card-border: #3498db;
+  --blue-card-text: #cce4ff;
+
+  --neutral-card-bg: #3d2e0e;
+  --neutral-card-border: #b8860b;
+  --neutral-card-text: #f0d080;
+
+  --assassin-card-bg: #0a0a0a;
+  --assassin-card-border: #555;
+  --assassin-card-text: #888;
+
+  --spy-red-bg: #2a0d09;
+  --spy-blue-bg: #071422;
+
+  --assassin: #1a1a1a;
+  --neutral: #7f6000;
+  --neutral-light: #b8860b;
+
+  --bg: #0d0d0d;
+  --surface: #161616;
+  --surface2: #1e1e1e;
+  --surface3: #262626;
+  --border: #2a2a2a;
+  --border-light: #3a3a3a;
+  --card-unrevealed-bg: #242424;
+  --card-unrevealed-border: #444;
+  --card-unrevealed-text: #e8e0d0;
+
+  --text: #e8e0d0;
+  --text-muted: #9a9080;
+  --text-dim: #6a6258;
+
+  --gold: #c9a84c;
+  --gold-light: #f0c060;
+
+  --font-display: 'Bebas Neue', 'Impact', sans-serif;
+  --font-body: 'Oswald', sans-serif;
+  --font-mono: 'Courier Prime', 'Courier New', monospace;
+}
+
+/* ── LIGHT THEME ── */
+html.light {
+  --red: #b03020;
+  --red-light: #d63a28;
+  --red-dark: #8c2015;
+  --red-glow: rgba(176, 48, 32, 0.25);
+  --red-card-bg: #fde8e5;
+  --red-card-border: #c0392b;
+  --red-card-text: #5a0e06;
+
+  --blue: #1a5a8a;
+  --blue-light: #1f6fab;
+  --blue-dark: #12406a;
+  --blue-glow: rgba(26, 90, 138, 0.25);
+  --blue-card-bg: #daeeff;
+  --blue-card-border: #1a5a8a;
+  --blue-card-text: #082038;
+
+  --neutral-card-bg: #f5e9cc;
+  --neutral-card-border: #997700;
+  --neutral-card-text: #4a3800;
+
+  --assassin-card-bg: #1e1e1e;
+  --assassin-card-border: #000;
+  --assassin-card-text: #ccc;
+
+  --spy-red-bg: #fdd8d4;
+  --spy-blue-bg: #d4e8fd;
+
+  --assassin: #333;
+  --neutral: #997700;
+  --neutral-light: #aa8800;
+
+  --bg: #f0ede8;
+  --surface: #ffffff;
+  --surface2: #f4f1ec;
+  --surface3: #e8e3da;
+  --border: #d0c8bc;
+  --border-light: #b0a898;
+  --card-unrevealed-bg: #ffffff;
+  --card-unrevealed-border: #a8a098;
+  --card-unrevealed-text: #1a1510;
+
+  --text: #1a1510;
+  --text-muted: #4a4038;
+  --text-dim: #7a7068;
+
+  --gold: #8a6a10;
+  --gold-light: #aa8820;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+#__next {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+
+/* Noise texture — only in dark mode */
+html:not(.light) body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade { animation: fadeIn 0.4s ease both; }
+.animate-slide { animation: slideIn 0.3s ease both; }
