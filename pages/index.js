@@ -159,7 +159,7 @@ export default function Home() {
         )}
 
         <div style={styles.footer}>
-          <span style={styles.footerText}>4+ PLAYERS • VOICE CHAT RECOMMENDED • SPYMASTERS VS OPERATIVES</span>
+          <span style={styles.footerText}>4+ PLAYERS • VOICE CHAT RECOMMENDED • SPYMASTERS VS OPERATIVES • Developed by Yash Madhani</span>
         </div>
       </div>
     </>
