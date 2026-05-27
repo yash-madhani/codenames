@@ -1,5 +1,7 @@
 # CODENAMES — Multiplayer Web Game
 
+Play at: https://codenames-p01d.onrender.com/
+
 A full-stack multiplayer Codenames implementation built with **Next.js** and **Socket.io**.
 
 ## Stack
